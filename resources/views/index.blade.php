@@ -162,7 +162,7 @@
                     <p>Dual SIM mobile</p>
                   </div>
 
-                  <div class="item-price"><span class="unit">$</span>148</div>
+                  <div class="item-price">  148</div>
                 </div>
               <img src="{{asset('assets/img/product-8.png')}}" alt="product">
               </a>
