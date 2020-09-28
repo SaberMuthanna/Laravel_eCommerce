@@ -23,11 +23,8 @@
                    <textarea id="description" class="form-control" value="" name="description" rows="3">{{isset($post) ? $post->description :''}}</textarea>
                 </div>
                 <div class="form-group">
-                   <label for="content">Content</label>
-                   <input id="content"  type="hidden" name="content"  value ="{{isset($post) ? $post->content :''}}" >
-                   <trix-editor input="content"> </trix-editor>
-                </div>
-
+                    <label for="published_at">Published At</label>
+                <input type="number" class="form-control" id="price" name="price" value="{{isset($post)?$post->price:''}}" placeholder="Select Date.." >
                 <div class="form-group">
                     <label for="published_at">Published At</label>
                 <input type="text" class="form-control" id="published_at" name="published_at" value="{{isset($post)?$post->published_at:''}}" placeholder="Select Date.." >

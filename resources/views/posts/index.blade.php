@@ -16,7 +16,7 @@
                     <th scope="col">id</th>
                     <th scope="col">Image</th>
                     <th scope="col">Name</th>
-                    <th scope="col">description</th>
+                    <th scope="col">price</th>
                     <th scope="col">Category Name</th>
                     <th scope="col">edit</th>
                     <th scope="col">Delete</th>
@@ -31,7 +31,7 @@
                                 <img class="rounded-circle" src="{{$post->image}}" alt ="" width="50px" height="50px" >
                             </td>
                             <td scope="row">{{$post->title}}</td>
-                            <td scope="row">{{$post->description}}</td>
+                            <td scope="row">{{$post->price}}</td>
                             <td scope="row">{{$post->category->name}}</td>
                             @if (!$post->trashed())
                             <td>

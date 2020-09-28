@@ -15,7 +15,7 @@
                         <th scope="col">id</th>
                         <th scope="col">Image</th>
                         <th scope="col">Name</th>
-                        <th scope="col">description</th>
+                        <th scope="col">price</th>
                         <th scope="col">Refactor</th>
                         <th scope="col">Delete</th>
 
@@ -29,7 +29,7 @@
                                <img class="rounded-circle" src="{{$post->image}}" alt="{{$post->title}}" width="50px" height="50px" border-radius:50%>
                            </td>
                            <td scope="row">{{$post->title}}</td>
-                           <td scope="row">{{$post->description}}</td>
+                           <td scope="row">{{$post->price}}</td>
                            <td scope= "row">
                                <form action="{{route('restore' , $post->id)}}" method = 'post'>
                                    @csrf

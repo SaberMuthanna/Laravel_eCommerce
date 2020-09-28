@@ -13,7 +13,7 @@ class Post extends Model
         'published_at'
     ];
     protected $fillable = [
-        'title', 'description', 'content', 'image', 'published_at', 'category_id', 'user_id'
+        'title', 'description', 'image', 'price', 'published_at', 'category_id', 'is_active', 'user_id'
     ];
     public function getimageAttribute($image){
         return asset($image);

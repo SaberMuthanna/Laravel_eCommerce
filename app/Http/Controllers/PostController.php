@@ -57,9 +57,10 @@ class PostController extends Controller
         $post = Post::create([
             'title' => $request->title,
             'description' => $request->description,
-            'content' => $request->content,
             // 'image'=>'storage/posts/' . $image_new_name,
             "image" => 'storage/' . $image,
+            'price' => $request->price,
+            'category_id' => $request->category,
             'published_at' => $request->published_at,
             'category_id' => $request->category,
             'user_id' => auth()->user()->id,
@@ -108,7 +109,7 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
-        $data = $request->only(['title', 'description', 'published_at', 'content']);
+        $data = $request->only(['title', 'description', 'price','published_at']);
 
         if ($request->hasFile('image')) {
             // $image = $request->image;
