@@ -26,31 +26,31 @@
       <div class="container"> 
         <div class="topbar-left">
           <button class="topbar-toggler">&#9776;</button>
-          <a class="topbar-brand" href="index">
+          <a class="topbar-brand" href="/">
             <img class="logo-default" src=" {{asset('img/logo.png')}}" alt="logo">
             <img class="logo-inverse" src="{{asset('img/logo-light.png')}}" alt="logo">
           </a>
         </div>
         <div class="topbar-right">
           <ul class="topbar-nav nav">
-           
-            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               {{--  k{{__('lang.language')}}  --}}
-               @if (config('app.locale')=='ar')
-                    اللغة العربية
-                @else
-                    English
-                @endif
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                      <a class="nav-link" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                          {{ $properties['native'] }}
-                      </a>
-                  @endforeach
-              </div>
+              <li class="nav-item"><a class="nav-link" href="{{route('welcome')}}"> {{ __('lang.Home') }}</a></li>
+              <li class="nav-item">
+                <a class="nav-link mr-3" href="#"> @if (config('app.locale')=='ar')
+                        اللغة العربية
+                    @else
+                        English
+                    @endif <i class="fa fa-caret-down"></i>
+                </a>
+                <div class="nav-submenu">                  
+                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <a class="nav-link" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                            {{ $properties['native'] }}
+                        </a>
+                    @endforeach 
+                </div>     
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="{{route('login')}}">{{ __('lang.Login') }}</a>
             </li>
           </ul>
         </div>

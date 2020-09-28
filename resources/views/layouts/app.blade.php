@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
      @if (config('app.locale')=='ar')
         <link href="{{ asset('css/bootstrap-rtl.css') }}" rel="stylesheet">
@@ -19,8 +20,11 @@
 
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap">
     {{--  <script src="https://kit.fontawesome.com/98c0e3e784.js" crossorigin="anonymous"></script>  --}}
-
     @yield('css')
+    
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="{{asset('img/apple-touch-icon.png')}}">
+<link rel="icon" href="{{asset('img/favicon.png')}}">
 </head>
 <body>
     <div id="app">
