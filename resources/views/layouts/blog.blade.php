@@ -56,6 +56,7 @@
         </div>
       </div>
     </nav>
+    
     <!-- END Topbar -->
     <!--start Header -->
     @yield('header')

@@ -3,7 +3,6 @@
 @section('title')
     saber Blog
 @endsection
-
 @section('header')
     <!-- Header -->
     <header class="header header-inverse bg-fixed" style="background-image: url(img/bg-gift.jpg)" data-overlay="8">
@@ -18,6 +17,7 @@
     </header>
     <!-- END Header -->
   @section('content')
+  
     <main class="main-content">
       <!--Product list!-->
       <section class="section">
@@ -25,7 +25,7 @@
           <div class="row gap-y">
             @foreach ($posts as $post)
               <div class="col-12 col-md-6 col-xl-4">
-                <a class="shop-item" href="">
+                <a class="shop-item" href="{{route('blog.show',$post->id)}}">
                   <img  src="{{$post->image}}" alt="product">
                     <div class="item-details">
                       <div>
@@ -34,12 +34,10 @@
                       </div>
                     <div class="item-price">السعر :<span class="unit">$</span>{{$post->price}}</div>
                     </div>
-
-
-
                 </a>
               </div>
               @endforeach
+                {{$posts->appends(['search'=>request()->query('search')])->links()}}
           </div>
         </div>
       </section>
