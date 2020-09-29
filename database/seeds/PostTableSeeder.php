@@ -16,10 +16,10 @@ class PostTableSeeder extends Seeder
      */
     public function run()
     {
-        $author1= User::create([
+        $author1 = User::create([
             'name' => 'saber muthanna',
-            'email'=>'sabermuthanna@gmail',
-            'password'=>Hash::make('password')
+            'email' => 'sabermuthanna@gmail',
+            'password' => Hash::make('password')
         ]);
         $author2 = User::create([
             'name' => 'yousf muthanna',
@@ -41,33 +41,37 @@ class PostTableSeeder extends Seeder
             'name' => 'Partnership'
         ]);
         $post1 =  Post::create([
-            'title' => 'We relocated our office to a new designed garage.',
-            'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-            'content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry1.',
+            'title' => 'We relocated our office .',
+            'description' => 'Lorem Ipsum is simply dummy text of the printing .',
+            'price' => 15000,
             'category_id' => $category1->id,
             'image' => 'storage/posts/1.jpg',
+            'is_active' => 1,
             'user_id' => $author1->id,
         ]);
         $post2 = $author2->posts()->create([
-            'title' => 'Top 5 brilliant content marketing strategies.',
-            'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-            'content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry1.',
+            'title' => 'Top 5 brilliant',
+            'description' => 'Lorem Ipsum is simply dummy text of the printing ',
+            'price' => 25000,
             'category_id' => $category2->id,
+            'is_active' => 1,
             'image' => 'storage/posts/2.jpg',
         ]);
         $post3 =  $author3->posts()->create([
-            'title' => 'Best practices for minimalist design with example.',
-            'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-            'content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry1.',
+            'title' => 'Best practices',
+            'description' => 'Lorem Ipsum is simply dummy text',
+            'price' => 15000,
             'category_id' => $category3->id,
+            'is_active' => 1,
             'image' => 'storage/posts/3.jpg',
-            
+
         ]);
         $post4 =  $author2->posts()->create([
-            'title' => 'Congratulate and thank to Maryam for joining our team.',
-            'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-            'content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry1.',
+            'title' => 'Congratulate ',
+            'description' => 'Lorem Ipsum is simply dummy text ',
+            'price' => 27000,
             'category_id' => $category2->id,
+            'is_active' => 1,
             'image' => 'storage/posts/4.jpg',
         ]);
         $tag1 = Tag::create([

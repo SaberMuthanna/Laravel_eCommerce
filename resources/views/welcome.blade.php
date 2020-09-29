@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col-12 col-lg-8 offset-lg-2">
             <h1>The Store</h1>
-            <p class="fs-20 opacity-70">You can find a list of our product in this page. We'll deliver your order in less than two days. Try it yourself!</p>
+            <p class="fs-20 opacity-70">You can find a list of our product in this page. Well deliver your order in less than two days. Try it yourself!</p>
           </div>
         </div>
       </div>
@@ -32,11 +32,11 @@
                       <h5>{{$post->title}}</h5>
                       <p>{{$post->description}}</p>
                       </div>
-                    <div class="item-price"><span class="unit">$</span>{{$post->price}}</div>
+                    <div class="item-price">السعر :<span class="unit">$</span>{{$post->price}}</div>
                     </div>
-                   
-                  
-                  
+
+
+
                 </a>
               </div>
               @endforeach
