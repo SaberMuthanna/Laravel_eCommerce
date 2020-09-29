@@ -48,24 +48,23 @@ class PostController extends Controller
     public function store(CreatePostRequest $request)
     {
         //upload the image to store
-        $image = $request->image->store('posts');
-        // $image = $request->image;
-        // $image_new_name = time() . $image->getClientOriginalName();
-        // $image->move('storage/posts', $image_new_name);
+        // $image = $request->image->store('posts');
+        $image = $request->image;
+        $image_new_name = time() . $image->getClientOriginalName();
+        $image->move('storage/posts', $image_new_name);
 
         //create this post
         $post = Post::create([
             'title' => $request->title,
             'description' => $request->description,
-            // 'image'=>'storage/posts/' . $image_new_name,
-            "image" => 'storage/' . $image,
+            'image'=>'storage/posts/'.$image_new_name,
+            // "image" => 'storage /'.$image,
             'price' => $request->price,
             'category_id' => $request->category,
             'published_at' => $request->published_at,
             'category_id' => $request->category,
             'user_id' => auth()->user()->id,
         ]);
-
         if ($request->tags) {
             $post->tags()->attach($request->tags);
         }
@@ -109,17 +108,17 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
-        $data = $request->only(['title', 'description', 'price','published_at']);
+        $data = $request->only(['title', 'description', 'price','published_at','category_id']);
 
         if ($request->hasFile('image')) {
-            // $image = $request->image;
-            // $image_new_name = time() . $image->getClientOriginalName();
-            // $image->move('storage/posts', $image_new_name);
-            // $data['image'] = 'storage/posts/' . $image_new_name;
+            $image = $request->image;
+            $image_new_name = time() . $image->getClientOriginalName();
+            $image->move('storage/posts', $image_new_name);
+            $data['image'] = 'storage/posts/' . $image_new_name;
 
-            $image = $request->image->store('posts');
-            Storage::delete($post->image);
-            $data['image'] = 'storage/' . $image;
+            // $image = $request->image->store('posts');
+            // Storage::delete($post->image);
+            // $data['image'] = 'storage/' . $image;
         }
         if ($request->tags) {
             $post->tags()->sync($request->tags);

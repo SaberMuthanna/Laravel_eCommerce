@@ -23,66 +23,24 @@
       <section class="section">
         <div class="container">
           <div class="row gap-y">
-            <div class="col-12 col-md-6 col-xl-4">
-              <a class="shop-item" href="shop-single.html">
-                <div class="item-details">
-                  <div>
-                    <h5>Apple Watch 2</h5>
-                    <p>Superior Sports Watch</p>
-                  </div>
-                  <div class="item-price"><span class="unit">$</span>399</div>
-                </div>
-              <img src=" {{asset('img/product-1.png')}}" alt="product">
-              </a>
-            </div>
- 
-
-
-            <div class="col-12 col-md-6 col-xl-4">
-              <a class="shop-item" href="shop-single.html">
-                <div class="item-details">
-                  <div>
-                    <h5>Mac Book Pro</h5>
-                    <p>A touch of genius</p>
-                  </div>
-
-                  <div class="item-price"><span class="unit">$</span>2,799</div>
-                </div>
-              <img src="{{asset('img/product-7.png')}}" alt="product">
-              </a>
-            </div>
-
-
-            <div class="col-12 col-md-6 col-xl-4">
-              <a class="shop-item" href="shop-single.html">
-                <div class="item-details">
-                  <div>
-                    <h5>Nokia 220</h5>
-                    <p>Dual SIM mobile</p>
-                  </div>
-
-                  <div class="item-price">  148</div>
-                </div>
-              <img src="{{asset('img/product-8.png')}}" alt="product">
-              </a>
-            </div>
-
-
-            <div class="col-12 col-md-6 col-xl-4">
-              <a class="shop-item" href="shop-single.html">
-                <div class="item-details">
-                  <div>
-                    <h5>iPhone 7 Plus</h5>
-                    <p>Now with all-new Portrait mode</p>
-                  </div>
-
-                  <div class="item-price"><span class="unit">$</span>769</div>
-                </div>
-              <img src="{{asset('img/product-9.png')}}" alt="product">
-              </a>
-            </div>
+            @foreach ($posts as $post)
+              <div class="col-12 col-md-6 col-xl-4">
+                <a class="shop-item" href="">
+                  <img  src="{{$post->image}}" alt="product">
+                    <div class="item-details">
+                      <div>
+                      <h5>{{$post->title}}</h5>
+                      <p>{{$post->description}}</p>
+                      </div>
+                    <div class="item-price"><span class="unit">$</span>{{$post->price}}</div>
+                    </div>
+                   
+                  
+                  
+                </a>
+              </div>
+              @endforeach
           </div>
-
         </div>
       </section>
     </main>
