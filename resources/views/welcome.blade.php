@@ -17,7 +17,6 @@
     </header>
     <!-- END Header -->
   @section('content')
-  
     <main class="main-content">
       <!--Product list!-->
       <section class="section">
